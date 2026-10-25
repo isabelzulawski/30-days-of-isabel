@@ -27,3 +27,9 @@ Day 2 documents the pink Spotify-connected player, with the supplied screenshot 
 Player: https://isabel-day-two-pink-player.calmpixie5.chatgpt.site/
 
 The player requires your own Spotify developer app and sign-in. A GitHub Pages copy needs its exact callback URL registered in that app before connecting. No Spotify tokens or secrets are included.
+
+## Day 3 — cymatics
+
+A minimal black-and-white Chladni-inspired pattern explorer with tone playback, frequency controls, moving particles, and PNG export. Frequency mapping and grain movement are illustrative. Source: `day-03-cymatics/`.
+
+Public project: https://day-03-cymatics-iz.calmpixie5.chatgpt.site/ (no ChatGPT login required).

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cymatics</title><style>
+*{box-sizing:border-box}html,body{margin:0;background:#080808;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif}body{height:100svh;min-height:600px;display:flex;flex-direction:column;padding:32px 42px}header{display:flex;align-items:center;justify-content:space-between}h1{font-size:15px;font-weight:400;letter-spacing:.22em;margin:0;text-transform:uppercase}.day{font:11px monospace;color:#888;letter-spacing:.12em}main{flex:1;min-height:0;position:relative;overflow:hidden;margin:16px 0 24px}canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}footer{flex:none;width:min(640px,100%);margin:0 auto 18px;position:relative}.readout{display:flex;align-items:baseline;justify-content:center;margin-bottom:30px;gap:8px}#hz{background:none;border:0;color:white;font:300 48px Arial;width:145px;text-align:right;padding:0;outline-offset:6px}#hz::-webkit-inner-spin-button{display:none}.unit{font:12px monospace;color:#aaa}.slider{width:100%;appearance:none;height:1px;background:#555;display:block;cursor:pointer;margin:0}.slider::-webkit-slider-thumb{appearance:none;width:12px;height:12px;border-radius:50%;background:#fff}.slider::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:#fff}.resonance-ticks{position:relative;height:0;pointer-events:none}.resonance-ticks i{position:absolute;top:5px;width:1px;height:3px;background:#555}.limits{display:flex;justify-content:space-between;font:10px monospace;color:#666;margin-top:13px}.controls{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:28px}button{color:#eee;background:transparent;border:0;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;border-radius:50%}button:hover{background:#242424}button:focus-visible,input:focus-visible{outline:1px solid white;outline-offset:5px}#play{background:white;color:black;width:52px;height:52px}svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.4}#volume{width:65px;background:#444}#volume::-webkit-slider-thumb{width:8px;height:8px}.volume{display:flex;gap:10px;align-items:center}.volume svg{width:15px;color:#888}#status{position:absolute;bottom:0;font:11px monospace;color:#aaa}@media(max-width:600px){body{padding:24px;min-height:540px}canvas{width:100%}footer{margin-bottom:8px}#hz{font-size:40px}.controls{gap:20px}.readout{margin-bottom:25px}}
+</style></head><body><header><h1>Cymatics</h1><span class="day">003</span></header><main><canvas id="pattern" width="700" height="700" aria-label="Particles on a simulated square plate"></canvas><span id="status" role="status"></span></main><footer><div class="readout"><input id="hz" type="number" value="520" min="80" max="2000" step="1" aria-label="Frequency in hertz"><span class="unit">Hz</span></div><input class="slider" id="frequency" type="range" min="80" max="2000" value="520" step="1" aria-label="Frequency"><div class="limits"><span>80</span><span>2000 Hz</span></div><div class="controls"><button id="shuffle" aria-label="Random frequency" title="Random frequency"><svg viewBox="0 0 24 24"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c2 0 4-3 6-6s4-6 6-6h3m-4-4 4 4-4 4"/></svg></button><button id="play" aria-label="Play tone" title="Play tone"><svg id="playIcon" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></button><div class="volume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9Zm13-1q6 4 0 8"/></svg><input class="slider" id="volume" type="range" min="0" max="0.2" value="0.035" step="0.001" aria-label="Volume"></div><button id="save" aria-label="Save pattern" title="Save pattern"><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></button></div></footer><script>
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),hz=document.querySelector('#hz'),slider=document.querySelector('#frequency'),volume=document.querySelector('#volume'),play=document.querySelector('#play');
+let frequency=520,audio,osc,gain,playing=false,last=0,previewUntil=0,pendingField=false;
+const N=128,S=700,margin=36,span=S-2*margin,energy=new Float32Array(N*N),gx=new Float32Array(N*N),gy=new Float32Array(N*N),modes=[],particles=[];
+let seed=42;function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+// Idealized Chladni nodal figures: equal-frequency square-plate mode pairs.
+// Both sin(m*pi*x)sin(n*pi*y) and its transposed partner have the same
+// eigenfrequency on a simply supported square. Their difference gives a
+// symmetric nodal family. This selects that family, not a general point drive.
+// Illustrative frequency scale C=20 Hz; not calibrated to a real free-edge plate.
+const C=20,zeta=.018;
+for(let m=1;m<=9;m++)for(let n=m+2;n<=9;n+=2){
+ const f=C*(m*m+n*n);if(f>2200)continue;
+ const shape=new Float32Array(N*N);
+ for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+ const u=x/(N-1),v=y/(N-1);
+ shape[y*N+x]=Math.sin(m*Math.PI*u)*Math.sin(n*Math.PI*v)-Math.sin(n*Math.PI*u)*Math.sin(m*Math.PI*v)}
+ modes.push({m,n,f,shape});
+}
+function rebuildField(){
+ // The nearest pair is the selected standing-wave mode; detuning affects
+ // agitation/settling strength rather than continuously changing mode indices.
+ const mode=modes.reduce((a,b)=>Math.abs(b.f-frequency)<Math.abs(a.f-frequency)?b:a);
+ const r=frequency/mode.f,response=2*zeta/Math.hypot(1-r*r,2*zeta*r);
+ for(let i=0;i<N*N;i++)energy[i]=mode.shape[i]*mode.shape[i]*Math.max(.08,response*response);
+ for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;gx[i]=(energy[i+1]-energy[i-1])*(N-1)/2;gy[i]=(energy[i+N]-energy[i-N])*(N-1)/2}
+}
+for(let i=0;i<16000;i++)particles.push({x:.015+rand()*.97,y:.015+rand()*.97,vx:0,vy:0,shade:.45+rand()*.55});
+function sample(field,x,y){const xx=x*(N-1),yy=y*(N-1),ix=Math.min(N-2,Math.floor(xx)),iy=Math.min(N-2,Math.floor(yy)),u=xx-ix,v=yy-iy,i=iy*N+ix;return(field[i]*(1-u)+field[i+1]*u)*(1-v)+(field[i+N]*(1-u)+field[i+N+1]*u)*v}
+// Phenomenological grain transport: damped drift down mean vibration energy,
+// with stronger agitation at antinodes. This is not a grain collision solver.
+function step(dt,drive){const strength=drive/.035,k=dt*60;
+ for(const p of particles){const e=sample(energy,p.x,p.y),dx=sample(gx,p.x,p.y),dy=sample(gy,p.x,p.y),den=1+Math.hypot(dx,dy)*.15;
+ const noise=(.0006+Math.sqrt(Math.max(0,e))*.0028)*Math.sqrt(k*strength);
+ p.vx=p.vx*Math.pow(.65,k)-dx/den*.00024*strength*k;p.vy=p.vy*Math.pow(.65,k)-dy/den*.00024*strength*k;
+ p.x+=p.vx*k+(rand()-.5)*noise;p.y+=p.vy*k+(rand()-.5)*noise;
+ // Re-seed grains reaching the rim to keep the finite particle preview populated.
+ if(p.x<.025||p.x>.975||p.y<.025||p.y>.975){p.x=.04+rand()*.92;p.y=.04+rand()*.92;p.vx=p.vy=0}
+ }}
+function draw(){ctx.fillStyle='#080808';ctx.fillRect(0,0,S,S);ctx.strokeStyle='#242424';ctx.lineWidth=1;ctx.strokeRect(margin+.5,margin+.5,span,span);ctx.fillStyle='#fff';for(const p of particles){ctx.globalAlpha=p.shade;ctx.fillRect(margin+p.x*span,margin+p.y*span,1.25,1.25)}ctx.globalAlpha=1}
+// The slider and shuffle share the same transition. Audio stays user-controlled;
+// a short silent visual preview lets frequency edits work while audio is paused.
+function animate(now){const dt=last?Math.min((now-last)/1000,.033):1/60;last=now;
+ if(pendingField){rebuildField();pendingField=false}
+ if(!document.hidden&&(playing||now<previewUntil)){step(dt,playing?Number(volume.value):.035);draw()}
+ requestAnimationFrame(animate)}
+function loosenParticles(delta){if(delta<8)return;const amount=Math.min(.12,.02+delta/5000);
+ for(const p of particles){if(rand()<.3){p.x=.04+rand()*.92;p.y=.04+rand()*.92}else{p.x=Math.max(.03,Math.min(.97,p.x+(rand()-.5)*amount));p.y=Math.max(.03,Math.min(.97,p.y+(rand()-.5)*amount))}p.vx=p.vy=0}}
+function setFrequency(value){const next=Math.round(Math.max(80,Math.min(2000,Number(value)||520))),delta=Math.abs(next-frequency);frequency=next;hz.value=frequency;slider.value=frequency;
+ if(osc)osc.frequency.setTargetAtTime(frequency,audio.currentTime,.04);
+ loosenParticles(delta);pendingField=true;previewUntil=performance.now()+6500}
+const resonances=[...new Set(modes.filter(m=>m.m!==m.n&&m.f>=80&&m.f<=2000).map(m=>Math.round(m.f)))].sort((a,b)=>a-b);
+slider.oninput=()=>setFrequency(slider.value);
+// Assisted tuning: release the slider on the nearest resonance. Typed Hz stays exact.
+slider.onchange=()=>setFrequency(resonances.reduce((a,b)=>Math.abs(b-frequency)<Math.abs(a-frequency)?b:a));
+slider.onkeydown=event=>{const key=event.key;if(!['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','Home','End'].includes(key))return;event.preventDefault();const up=key==='ArrowRight'||key==='ArrowUp';let f;if(key==='Home')f=resonances[0];else if(key==='End')f=resonances.at(-1);else f=up?(resonances.find(f=>f>frequency)||resonances.at(-1)):([...resonances].reverse().find(f=>f<frequency)||resonances[0]);setFrequency(f)};
+hz.onchange=()=>setFrequency(hz.value);
+document.querySelector('#shuffle').onclick=()=>setFrequency(resonances[Math.floor(rand()*resonances.length)]);
+const ticks=document.createElement('div');ticks.className='resonance-ticks';ticks.setAttribute('aria-hidden','true');
+for(const f of resonances){const tick=document.createElement('i');tick.style.left=((f-80)/1920*100)+'%';ticks.appendChild(tick)}slider.after(ticks);
+function updatePlay(){play.setAttribute('aria-label',playing?'Pause tone':'Play tone');play.title=playing?'Pause tone':'Play tone';play.setAttribute('aria-pressed',String(playing));document.querySelector('#playIcon').innerHTML=playing?'<path d="M8 5v14M16 5v14" stroke-width="4"/>':'<path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/>'}
+play.onclick=async()=>{try{if(!audio){audio=new(window.AudioContext||window.webkitAudioContext)();gain=audio.createGain();gain.gain.value=0;gain.connect(audio.destination);osc=audio.createOscillator();osc.type='sine';osc.frequency.value=frequency;osc.connect(gain);osc.start()}await audio.resume();playing=!playing;if(!playing)previewUntil=0;last=0;gain.gain.setTargetAtTime(playing?Number(volume.value):0,audio.currentTime,.035);updatePlay()}catch{document.querySelector('#status').textContent='Audio unavailable'}};
+volume.oninput=()=>{if(gain&&playing)gain.gain.setTargetAtTime(Number(volume.value),audio.currentTime,.035)};
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing){playing=false;gain.gain.setTargetAtTime(0,audio.currentTime,.035);updatePlay()}});
+document.querySelector('#save').onclick=()=>{draw();canvas.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`cymatics-${frequency}hz.png`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)})};
+rebuildField();for(let i=0;i<350;i++)step(1/60,.035);draw();requestAnimationFrame(animate);
+</script></body></html>

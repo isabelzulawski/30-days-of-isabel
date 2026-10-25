@@ -20,7 +20,7 @@
   "3": {
     "title": "cymatics",
     "work": "a black and white interface for exploring sound through chladni-inspired patterns. change the frequency, listen to the tone, and save a pattern.",
-    "process": "started with a visual that changed with frequency, then tried moving particles on a simulated plate. the slider and shuffle behaved differently, and the shapes didn’t look right, so i refined the controls and switched to symmetric nodal patterns. it’s an approximation, not an exact simulation of a real plate.",
+    "process": "started with a visual that changed with frequency, then tried moving particles on a simulated plate. the slider and shuffle behaved differently, and the shapes didn’t look right, so i refined the controls and switched to symmetric nodal patterns. it’s a digital representation of chladni patterns, rather than a simulation of a specific physical plate.",
     "inspiration": "cymatics and chladni plate experiments, where sand collects along the still parts of a vibrating surface.",
     "link": "https://day-03-cymatics-iz.calmpixie5.chatgpt.site/",
     "refine": false,

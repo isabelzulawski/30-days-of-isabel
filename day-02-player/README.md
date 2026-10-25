@@ -1,9 +1,11 @@
 # isabel.fm — day 02
-A buildless pink chrome music player and queue. Open `dist/` through an HTTP server, or use its private hosted Site.
 
-## Spotify setup
-Create a Web API application in https://developer.spotify.com/dashboard using your Spotify Premium account. Register the exact redirect URI displayed in the player's connect screen. Enter its **Client ID**, never its Client Secret. Authentication uses Authorization Code with PKCE. Tokens stay in sessionStorage on this browser and never enter the project or its source repository.
+A pink chrome Spotify remote with a current-track display, queue, volume, repeat, and local heart bookmarks.
 
-The player is a remote for an active Spotify device, not an audio-streaming client. Playback, seeking, volume, and repeat depend on Spotify API access and the active device. The queue is read-only. Polling backs off on Spotify rate limits. Live authentication needs a configured developer app and has not been tested with a real account yet.
+Live player: https://isabel-day-two-pink-player.calmpixie5.chatgpt.site/
 
-The demo plays an original synthesized loop through Web Audio. Animated bars are decorative. The queue displays upcoming Spotify songs; hearts are local bookmarks.
+Click **connect spotify** to authorize your account. The public Client ID is configured in `app.js`. No client secret is required or included; authentication uses Authorization Code with PKCE, and tokens stay in this browser’s sessionStorage. Spotify developer-mode account restrictions still apply.
+
+Playback controls operate on an already active Spotify device. The animated bars are decorative. Demo mode plays original synthesized loops.
+
+To run locally, serve this folder with `python3 -m http.server 8000`. Spotify sign-in requires registering that exact redirect URL in the developer app; a GitHub Pages deployment likewise needs its own registered redirect URL.

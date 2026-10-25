@@ -3,9 +3,18 @@
     "title": "digital portfolio",
     "work": "for my first day, i made the place where all thirty days will live. as a byproduct, i made a font out of my own handwriting",
     "process": "starting with a blank space is hard! i hope at the end you can wander around my thirty places. i wanted it to look more 3d but gave up",
-    "inspiration": "originally, olafur eliasson\u2019s explorable online archive. then i ended up wanting it to look more like a sketchbook ",
+    "inspiration": "originally, olafur eliasson’s explorable online archive. then i ended up wanting it to look more like a sketchbook ",
     "refine": true,
     "link": "",
     "imagePath": "entries/day-01.png"
+  },
+  "2": {
+    "title": "isabel.fm",
+    "work": "a pink, chrome music player that connects to whatever i’m listening to on spotify.",
+    "process": "built a retro player, connected it to spotify, and refined the layout and playback buttons.",
+    "inspiration": "a pink desktop music player with stacked windows, metallic controls, and a queue.",
+    "link": "https://isabel-day-two-pink-player.calmpixie5.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-02-player.png"
   }
 }

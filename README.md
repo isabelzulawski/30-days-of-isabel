@@ -8,7 +8,7 @@ From this directory run `python3 -m http.server 8000`, then open http://localhos
 
 ## Saved entry
 
-The exported Day 1 “digital portfolio” entry and its original photo are included in `entries/`. `entries.js` loads these as initial content. Existing browser edits take precedence. Future edits and uploads stay in that browser until exported; they do not automatically sync to GitHub. Use the notebook menu’s **export entries** control for backups.
+The exported Day 1 “digital portfolio” and Day 2 “isabel.fm” entries and their original screenshots are included in `entries/`. `entries.js` loads these as initial content. Existing browser edits take precedence. Future edits and uploads stay in that browser until exported; they do not automatically sync to GitHub. Use the notebook menu’s **export entries** control for backups.
 
 ## Files
 
@@ -19,3 +19,11 @@ The exported Day 1 “digital portfolio” entry and its original photo are incl
 - `entries.js`: browser-ready version of the snapshot
 
 Live site: https://thirty-days-isabel-field.calmpixie5.chatgpt.site/
+
+## Day 2 — isabel.fm
+
+Day 2 documents the pink Spotify-connected player, with the supplied screenshot and project link. Its source is in `day-02-player/`.
+
+Player: https://isabel-day-two-pink-player.calmpixie5.chatgpt.site/
+
+The player requires your own Spotify developer app and sign-in. A GitHub Pages copy needs its exact callback URL registered in that app before connecting. No Spotify tokens or secrets are included.

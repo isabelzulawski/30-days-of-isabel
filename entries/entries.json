@@ -34,5 +34,14 @@
     "refine": false,
     "link": "https://isabel-pumpkin-pomodoro.calmpixie5.chatgpt.site/",
     "imagePath": "entries/day-04-pomodoro.png"
+  },
+  "5": {
+    "title": "to do wheel",
+    "work": "a simple wheel that picks what to do next from my to do list",
+    "process": "this was my first time using claude to code a visual. i did not enjoy it! i like my idea but it just has a terrible feel to it",
+    "inspiration": "practical problems in my own life - i never know what task to choose",
+    "link": "https://isabel-one-little-thing.calmpixie5.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-05-wheel.png"
   }
 }

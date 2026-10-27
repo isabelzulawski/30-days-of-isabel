@@ -37,3 +37,9 @@ Public project: https://day-03-cymatics-iz.calmpixie5.chatgpt.site/ (no ChatGPT 
 ## Day 4 — pomodoro timer
 
 The October 26 entry includes Isabel’s descriptions and the timer screenshot. Source and the supplied illustrations are in `day-04-pomodoro/`.
+
+## Day 5 — to do wheel
+
+The October 27 entry includes Isabel’s descriptions, a screenshot, and the original task wheel. Source: `day-05-to-do-wheel/`.
+
+Public project: https://isabel-one-little-thing.calmpixie5.chatgpt.site/

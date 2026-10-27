@@ -14,7 +14,7 @@
     "process": "built a retro player, connected it to spotify, and refined the layout and playback buttons. i want it to be a little thing in the corner of my screen instead of a browser tho",
     "inspiration": "pics i found on pinterest",
     "link": "https://isabel-day-two-pink-player.calmpixie5.chatgpt.site/",
-    "refine": false,
+    "refine": true,
     "imagePath": "entries/day-02-player.png"
   },
   "3": {
@@ -25,5 +25,14 @@
     "link": "https://day-03-cymatics-iz.calmpixie5.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-03-cymatics.png"
+  },
+  "4": {
+    "title": "pomodoro timer",
+    "work": "i made a cute lil pomodoro timer because i've been having trouble studying and i yearn for coziness",
+    "process": "i chose pics from pinterest and tried to make the simplest UI since it's not supposed to distract me ",
+    "inspiration": "pinterest AF. also i use pomodoro youtube videos when i study but i like to listen to my own music, so i just wanted the visual",
+    "refine": false,
+    "link": "https://isabel-pumpkin-pomodoro.calmpixie5.chatgpt.site/",
+    "imagePath": "entries/day-04-pomodoro.png"
   }
 }

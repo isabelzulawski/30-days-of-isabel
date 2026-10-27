@@ -33,3 +33,7 @@ The player requires your own Spotify developer app and sign-in. A GitHub Pages c
 A minimal black-and-white Chladni-inspired pattern explorer with tone playback, frequency controls, moving particles, and PNG export. Frequency mapping and grain movement are illustrative. Source: `day-03-cymatics/`.
 
 Public project: https://day-03-cymatics-iz.calmpixie5.chatgpt.site/ (no ChatGPT login required).
+
+## Day 4 — pomodoro timer
+
+The October 26 entry includes Isabel’s descriptions and the timer screenshot. Source and the supplied illustrations are in `day-04-pomodoro/`.

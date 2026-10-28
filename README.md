@@ -43,3 +43,9 @@ The October 26 entry includes Isabel’s descriptions and the timer screenshot. 
 The October 27 entry includes Isabel’s descriptions, a screenshot, and the original task wheel. Source: `day-05-to-do-wheel/`.
 
 Public project: https://isabel-one-little-thing.calmpixie5.chatgpt.site/
+
+## Day 6 — digital bedroom
+
+The October 28 entry includes Isabel’s descriptions and the published bedroom screenshot. Source and room artwork: `day-06-digital-bedroom/`.
+
+Public project: https://isabel-digital-bedroom.isabel-zulawski.chatgpt.site/

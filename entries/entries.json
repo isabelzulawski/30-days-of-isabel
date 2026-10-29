@@ -52,5 +52,14 @@
     "link": "https://isabel-digital-bedroom.isabel-zulawski.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-06-bedroom.png"
+  },
+  "7": {
+    "title": "pixelate",
+    "work": "a playful tool that lets you pixelate an image of your choice in different ways",
+    "process": "i originally wanted a way to draw pixel art, but i'm not sure how i would implement that",
+    "inspiration": "pixel art and its elements",
+    "link": "https://isabel-pixelate.isabel-zulawski.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-07-pixelate.png"
   }
 }

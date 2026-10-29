@@ -49,3 +49,9 @@ Public project: https://isabel-one-little-thing.calmpixie5.chatgpt.site/
 The October 28 entry includes Isabel’s descriptions and the published bedroom screenshot. Source and room artwork: `day-06-digital-bedroom/`.
 
 Public project: https://isabel-digital-bedroom.isabel-zulawski.chatgpt.site/
+
+## Day 7 — pixelate
+
+The October 29 entry includes Isabel’s descriptions and a screenshot. Source and bundled sample artwork: `day-07-pixelate/`. Photos are processed in the browser and exported as PNG files.
+
+Project: https://isabel-pixelate.isabel-zulawski.chatgpt.site/

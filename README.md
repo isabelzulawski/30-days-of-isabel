@@ -55,3 +55,7 @@ Public project: https://isabel-digital-bedroom.isabel-zulawski.chatgpt.site/
 The October 29 entry includes Isabel’s descriptions and a screenshot. Source and bundled sample artwork: `day-07-pixelate/`. Photos are processed in the browser and exported as PNG files.
 
 Project: https://isabel-pixelate.isabel-zulawski.chatgpt.site/
+
+## IC fabrication walkthrough
+
+Source: `day-08-chip-fabrication/`. A visual walkthrough with manual navigation, a black background, and a technical monospace interface. Documentation for the journal entry is not included yet.

@@ -61,5 +61,14 @@
     "link": "https://isabel-pixelate.isabel-zulawski.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-07-pixelate.png"
+  },
+  "8": {
+    "title": "chip design",
+    "work": "a tool designed to teach someone the basics about chip design",
+    "process": "i like the way the tool looks, but not necessarily the information that it presents",
+    "inspiration": "nothing in particular for this one",
+    "link": "https://isabel-chip-fabrication.isabel-zulawski.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-08-chip.png"
   }
 }

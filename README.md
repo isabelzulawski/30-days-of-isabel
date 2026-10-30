@@ -58,4 +58,4 @@ Project: https://isabel-pixelate.isabel-zulawski.chatgpt.site/
 
 ## IC fabrication walkthrough
 
-Source: `day-08-chip-fabrication/`. A visual walkthrough with manual navigation, a black background, and a technical monospace interface. Documentation for the journal entry is not included yet.
+Source: `day-08-chip-fabrication/`. A visual walkthrough with manual navigation, a black background, and a technical monospace interface. The October 30 entry includes Isabel’s descriptions, a screenshot, and the public project link.

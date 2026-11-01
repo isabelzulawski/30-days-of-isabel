@@ -79,5 +79,14 @@
     "refine": false,
     "link": "https://thirty-days-isabel-field.isabel-zulawski.chatgpt.site/day-09-imagined-portraits/",
     "imagePath": "entries/day-09-isabel.png"
+  },
+  "10": {
+    "title": "neural networks",
+    "work": "another tutorial-type site like the IC one, this time for neural networks",
+    "process": "again, i like the design but could make the content better",
+    "inspiration": "nothing in particular besides the previous one about IC design that i made",
+    "link": "https://isabel-neural-network.isabel-zulawski.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-10-neural-network.png"
   }
 }

@@ -63,3 +63,7 @@ Source: `day-08-chip-fabrication/`. A visual walkthrough with manual navigation,
 ## Day 9 — imagined portraits
 
 The October 31 entry contains two AI-generated portraits based on nonphysical descriptions. Full-size images are in `entries/` and the gallery is in `day-09-imagined-portraits/`. The appearances are invented, not accurate likenesses.
+
+## Day 10 — neural networks
+
+The November 1 entry contains Isabel’s descriptions, the screenshot, and the walkthrough link. Source and numerical gradient checks: `day-10-neural-network/`. Run `node check-math.cjs` from that folder.

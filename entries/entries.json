@@ -70,5 +70,14 @@
     "link": "https://isabel-chip-fabrication.isabel-zulawski.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-08-chip.png"
+  },
+  "9": {
+    "title": "imagined portraits",
+    "work": "two AI-generated cartoon portraits of my friend and me, made from descriptions of our personalities and interests instead of what we look like",
+    "process": "i described my friend using her interests, routines, and personality, then she wrote a description of me. AI turned each description into a cartoon portrait and used details like books, circuits, a cat, slurpees, and matcha to build the scenes. no reference photos were used, so the physical appearances are invented rather than accurate likenesses.",
+    "inspiration": "how we describe the people we care about without describing their appearance",
+    "refine": false,
+    "link": "https://thirty-days-isabel-field.isabel-zulawski.chatgpt.site/day-09-imagined-portraits/",
+    "imagePath": "entries/day-09-isabel.png"
   }
 }

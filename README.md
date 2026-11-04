@@ -71,3 +71,7 @@ The November 1 entry contains Isabel’s descriptions, the screenshot, and the w
 ## Day 11 — austin scrapbook
 
 A six-spread travel scrapbook of Isabel’s UT Austin trip, with eleven supplied photographs, handwritten captions, page navigation, and a full-size photo viewer. Source and photos: `day-11-austin-scrapbook/`. Open its `index.html` directly or serve the repository locally.
+
+## Day 12 — sick day
+
+The November 3 entry includes Isabel’s descriptions and a screenshot. Source: `day-12-sick-day/`. A complete pixel-art adventure through a rainy NYC neighborhood, with clinic, pharmacy, grocery, home tasks, an entirely fictional email, and a bedtime ending. Open `index.html` to play. All artwork and bitmap lettering are drawn in JavaScript without dependencies or network requests.

@@ -67,3 +67,7 @@ The October 31 entry contains two AI-generated portraits based on nonphysical de
 ## Day 10 — neural networks
 
 The November 1 entry contains Isabel’s descriptions, the screenshot, and the walkthrough link. Source and numerical gradient checks: `day-10-neural-network/`. Run `node check-math.cjs` from that folder.
+
+## Day 11 — austin scrapbook
+
+A six-spread travel scrapbook of Isabel’s UT Austin trip, with eleven supplied photographs, handwritten captions, page navigation, and a full-size photo viewer. Source and photos: `day-11-austin-scrapbook/`. Open its `index.html` directly or serve the repository locally.

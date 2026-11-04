@@ -1,13 +1,4 @@
 {
-  "1": {
-    "title": "digital portfolio",
-    "work": "for my first day, i made the place where all thirty days will live. as a byproduct, i made a font out of my own handwriting",
-    "process": "starting with a blank space is hard! i hope at the end you can wander around my thirty places. i wanted it to look more 3d but gave up",
-    "inspiration": "originally, olafur eliasson’s explorable online archive. then i ended up wanting it to look more like a sketchbook ",
-    "refine": true,
-    "link": "",
-    "imagePath": "entries/day-01.png"
-  },
   "2": {
     "title": "isabel.fm",
     "work": "a pink, chrome music player that connects to whatever i’m listening to on spotify.",
@@ -25,6 +16,15 @@
     "link": "https://day-03-cymatics-iz.calmpixie5.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-03-cymatics.png"
+  },
+  "1": {
+    "title": "digital portfolio",
+    "work": "for my first day, i made the place where all thirty days will live. as a byproduct, i made a font out of my own handwriting",
+    "process": "starting with a blank space is hard! i hope at the end you can wander around my thirty places. i wanted it to look more 3d but gave up",
+    "inspiration": "originally, olafur eliasson’s explorable online archive. then i ended up wanting it to look more like a sketchbook ",
+    "refine": true,
+    "link": "",
+    "imagePath": "entries/day-01.png"
   },
   "4": {
     "title": "pomodoro timer",
@@ -88,5 +88,14 @@
     "link": "https://isabel-neural-network.isabel-zulawski.chatgpt.site/",
     "refine": false,
     "imagePath": "entries/day-10-neural-network.png"
+  },
+  "11": {
+    "title": "austin scrapbook",
+    "work": "a travel scrapbook for my trip to austin this wknd",
+    "process": "just wanted a cutesy recap",
+    "inspiration": "my camera roll",
+    "link": "https://thirty-days-isabel-field.isabel-zulawski.chatgpt.site/day-11-austin-scrapbook/",
+    "refine": false,
+    "imagePath": "entries/day-11-austin.png"
   }
 }

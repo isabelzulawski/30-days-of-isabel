@@ -75,3 +75,7 @@ A six-spread travel scrapbook of Isabel’s UT Austin trip, with eleven supplied
 ## Day 12 — sick day
 
 The November 3 entry includes Isabel’s descriptions and a screenshot. Source: `day-12-sick-day/`. A complete pixel-art adventure through a rainy NYC neighborhood, with clinic, pharmacy, grocery, home tasks, an entirely fictional email, and a bedtime ending. Open `index.html` to play. All artwork and bitmap lettering are drawn in JavaScript without dependencies or network requests.
+
+## Day 13 — pixel art
+
+A pixel drawing studio with two canvas sizes, palettes, custom colors, pencil, fill, eraser, undo/redo, and transparent PNG export. Source: `day-13-pixel-art/`. Open `index.html` directly to draw; the last drawing saves in the current browser.

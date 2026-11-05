@@ -115,5 +115,14 @@
     "link": "https://thirty-days-isabel-field.isabel-zulawski.chatgpt.site/day-13-pixel-art/",
     "refine": false,
     "imagePath": "entries/day-13-pixel-art.png"
+  },
+  "14": {
+    "title": "paper practice",
+    "work": "a study site for a paper about audio codecs that i have a quiz on monday",
+    "process": "wanted a way to learn the paper by explaining it in my own words and practicing short responses",
+    "inspiration": "the paper codec does matter and my upcoming quiz",
+    "link": "https://isabel-codec-study.isabel-zulawski.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-14-codec-study.png"
   }
 }

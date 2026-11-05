@@ -79,3 +79,9 @@ The November 3 entry includes Isabel’s descriptions and a screenshot. Source: 
 ## Day 13 — pixel art
 
 A pixel drawing studio with two canvas sizes, palettes, custom colors, pencil, fill, eraser, undo/redo, and transparent PNG export. Source: `day-13-pixel-art/`. Open `index.html` directly to draw; the last drawing saves in the current browser.
+
+## Day 14 — paper practice
+
+The November 5 entry documents a study tool for the X-Codec paper, with six lessons, written recall, two sets of five short-response practice questions, reference answers, and self-assessment rubrics. Source and the supplied paper: `day-14-codec-study/`. Answers stay in the current browser and are not committed.
+
+Public project: https://isabel-codec-study.isabel-zulawski.chatgpt.site/

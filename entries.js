@@ -19,3 +19,24 @@ window.ISABEL_ENTRIES[17] = {
   "refine": false,
   "imagePath": "entries/day-17-sound-lab.jpg"
 };
+
+Object.assign(window.ISABEL_ENTRIES, {
+  "15": {
+    "title": "shelf cat",
+    "work": "a little gold cat i 3d printed that drapes over the edge of a shelf, with a version you can spin around online",
+    "process": "started with an ai recreation from photos, then used the original print file to get his chunky shape right. kept both versions and the photos so you can compare them.",
+    "inspiration": "the sleepy fat cat model on makerworld and my own little print",
+    "link": "https://thirty-days-isabel-field.isabel-zulawski.chatgpt.site/day-15-shelf-cat/",
+    "refine": false,
+    "imagePath": "entries/day-15-shelf-cat.jpg"
+  },
+  "16": {
+    "title": "photo collage",
+    "work": "a moving quilt made from my own photos. move around to stir the pictures and click one to get closer.",
+    "process": "i tried making one big picture out of all the little ones first. i liked the photos more as a patchwork, especially when you zoom in and can still see the edges of the photos around it.",
+    "inspiration": "my camera roll, autumn colors, and patchwork quilts",
+    "link": "https://isabel-photo-mosaic.isabel-zulawski.chatgpt.site/",
+    "refine": false,
+    "imagePath": "entries/day-16-photo-collage.jpg"
+  }
+});

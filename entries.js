@@ -40,3 +40,22 @@ Object.assign(window.ISABEL_ENTRIES, {
     "imagePath": "entries/day-16-photo-collage.jpg"
   }
 });
+window.ISABEL_ENTRIES[18] = {
+  title: "sketch to mockup of my mobile app ideas",
+  work: "two hand-drawn app ideas turned into polished mobile screens. one shows how tides affect a beach walk, and the other recommends trails in acadia.",
+  process: "i put the original sketches next to the finished mockups so you can see how the shoreline map and trail rankings took shape.",
+  inspiration: "valley grove beach, acadia, and figuring out where to walk",
+  link: "https://isabel-sketch-to-mockup.isabel-zulawski.chatgpt.site/",
+  refine: false,
+  imagePath: "entries/day-18-mobile-app-ideas.jpg"
+};
+
+window.ISABEL_ENTRIES[20] = {
+  title: "projecting text with madmapper",
+  work: "my first experiment with projecting text in madmapper",
+  process: "i used the text generator and adjusted the corners of a quad to fit the projection. the page has a screenshot of the setup and two videos of the tests.",
+  inspiration: "keene gave me a projector to play with!",
+  link: "https://isabel-madmapper-text.isabel-zulawski.chatgpt.site/",
+  refine: false,
+  imagePath: "entries/day-20-madmapper.png"
+};

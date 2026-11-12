@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building My Own Sound Lab</title>
+  <style>
+    body { margin: 0; background: #fff; color: #000; font: 1rem/1.6 system-ui, sans-serif; }
+    main { max-width: 42rem; margin: auto; padding: clamp(2rem, 8vw, 5rem) 1.25rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -.04em; margin: 0; }
+    h2 { font-size: 1.2rem; margin: 0 0 .5rem; }
+    section { margin-top: 2.75rem; }
+    p { margin: 0 0 1rem; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; font-weight: 700; text-underline-offset: .2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Building My Own Sound Lab</h1>
+    <section>
+      <h2>Hardware</h2>
+      <p>I soldered and wired together a small speaker, a PAM8403 audio amplifier, and a 3.5 mm audio jack. An external power supply powers the amplifier so I can send sound from my laptop to the speaker.</p>
+      <img src="hardware.jpg" width="934" height="703" alt="The speaker, wired amplifier circuit, and laptop on my workbench">
+    </section>
+    <section>
+      <h2>Software</h2>
+      <p>I used Codex to make an interface that controls frequency, amplitude, and waveform. It also runs continuous frequency sweeps and stepped scans that hold each frequency for a set time.</p>
+      <p><a href="https://isabel-sound-lab.isabel-zulawski.chatgpt.site/" target="_blank" rel="noopener">Open Sound Lab</a></p>
+      <img src="interface.jpg" alt="Sound Lab interface showing signal controls and a stepped scan from 100 to 200 Hz">
+    </section>
+    <section>
+      <h2>Purpose</h2>
+      <p>I want to see how water, sand, and plastic wrap respond to sound vibrations. Building the hardware and software gives me a way to change the signal and watch what happens.</p>
+    </section>
+  </main>
+</body>
+</html>

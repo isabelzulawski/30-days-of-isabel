@@ -9,3 +9,13 @@ window.ISABEL_ENTRIES[19] = {
   "refine": false,
   "imagePath": "entries/day-19-art-class.jpg"
 };
+
+window.ISABEL_ENTRIES[17] = {
+  "title": "building my own sound lab",
+  "work": "a speaker setup i soldered together and a tool for controlling it from my laptop",
+  "process": "i wired the amplifier and speaker, then used codex to build controls for frequency, amplitude, and waveform, with sweeps and stepped scans",
+  "inspiration": "seeing how water, sand, and plastic wrap respond to sound",
+  "link": "https://isabel-building-sound-lab.isabel-zulawski.chatgpt.site/",
+  "refine": false,
+  "imagePath": "entries/day-17-sound-lab.jpg"
+};

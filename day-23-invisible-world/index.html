@@ -16,35 +16,35 @@
 <nav aria-label="Exhibit shortcuts"><a href="#scale">Explore the nanoscale ↓</a><a href="#memory-demo">Try the one-bit memory ↓</a></nav>
 </header>
 <section class="split phone-scroll">
-<div><h2>Inside your phone</h2><p>A computer chip is a tiny piece of silicon packed with microscopic electronic components. Scroll to get closer to one.</p><p><strong>Very Large Scale Integration (VLSI)</strong> is how engineers design chips that fit thousands, millions, or even billions of components onto one piece of silicon.</p></div>
+<div><h2>Inside your phone</h2><p>Inside your phone is a chip, a tiny piece of silicon packed with tiny switches. Scroll to zoom in.</p><p>Fitting millions or even billions of parts onto a chip is called <strong>very large scale integration</strong>, or VLSI.</p></div>
 <div class="scene" role="img" aria-label="Illustration of a phone with a chip on its circuit board"><div class="phone"><div class="board"></div><div class="chip"></div></div></div>
 </section>
 <section class="split">
-<div><h2>Meet TSMC</h2><p>Taiwan Semiconductor Manufacturing Company is a leading chip manufacturer based in Taiwan. Chip designers are like architects who draw blueprints. A manufacturer like TSMC is the builder that turns them into physical chips.</p><p>Engineers can design for TSMC’s 28 nm manufacturing technology. “28 nm” names a generation of technology. Individual parts of the chip can have different dimensions.</p></div>
-<figure><div class="wafer-stage"><button class="wafer" type="button" aria-label="Magnify an illustrated chip on the wafer" aria-pressed="false"></button><div class="die" aria-hidden="true"></div></div><figcaption>Hover or tap to magnify a fictional chip on this illustrated silicon wafer.</figcaption></figure>
+<div><h2>Who makes the chips?</h2><p>Chip designers draw the blueprints. Manufacturers like Taiwan Semiconductor Manufacturing Company (TSMC) build the chips on round slices of silicon called wafers.</p><p>TSMC calls one way of making chips “28 nm.” That’s the name of a technology generation. How small is 28 nm?</p></div>
+<figure><div class="wafer-stage"><button class="wafer" type="button" aria-label="Magnify an illustrated chip on the wafer" aria-pressed="false"></button><div class="die" aria-hidden="true"></div></div><figcaption>Hover or tap to see one illustrated chip up close.</figcaption></figure>
 </section>
 <section id="scale">
 <h2>How small are we talking?</h2>
-<p>A nanometer is one billionth of a meter. Move the zoom slider to compare the width of a hair with lengths measured in tens of nanometers.</p>
+<p>A nanometer (nm) is one billionth of a meter. Start with a hair and zoom in.</p>
 <div class="scope">
 <canvas aria-label="Illustrated specimens scaled to the current field of view"></canvas>
 <label for="zoom">Zoom <output id="field" for="zoom"></output></label>
 <input id="zoom" type="range" min="0" max="1000" value="0">
 <div class="row" id="stops" aria-label="Jump to a specimen"></div>
 <p id="specimen" aria-live="polite"></p>
-<small>Biological sizes vary. The bacterium is drawn at 1,500 nm within an illustrative 1,000–2,000 nm range. The 60 nm and 28 nm markers show lengths for comparison. Transistors and manufacturing nodes don’t have a single universal dimension.</small>
+<small>Sizes are approximate. The 60 nm and 28 nm markers show example lengths. Real switches vary in size.</small>
 </div>
-<p>At these example sizes, a hair is more than <strong>1,300 times</strong> as wide as the 60 nm feature.</p>
+<p>A hair is about <strong>1,300 times</strong> wider than the 60 nm marker.</p>
 </section>
 <section class="split">
-<div><h2>The world’s tiniest switches</h2><p>A transistor controls the flow of electricity. Think of it as a microscopic switch. Digital computers represent information with 0s and 1s. Many tiny switches working together make complicated computations possible.</p></div>
-<div class="demo"><div class="wire" aria-hidden="true"><span></span><b></b><span></span></div><p>Output <output class="output" id="switch-value" aria-live="polite">0</output></p><button id="switch" aria-pressed="false">Close switch</button><p>Simplified model. Open represents 0 and closed represents 1.</p></div>
+<div><h2>A switch inside a chip</h2><p>A <strong>transistor</strong> is a tiny part that controls electricity. In a chip, it can act like a switch. Try flipping one to see how two states can represent a 0 or a 1.</p></div>
+<div class="demo"><div class="wire" aria-hidden="true"><span></span><b></b><span></span></div><p>Output <output class="output" id="switch-value" aria-live="polite">0</output></p><button id="switch" aria-pressed="false">Close switch</button><p>In this model, open = 0 and closed = 1.</p></div>
 </section>
 <section class="split" id="memory-demo">
-<div><h2>A memory that remembers one thing</h2><p>A D flip-flop remembers one bit, either 0 or 1. It’s like a tiny notebook that holds one yes-or-no answer. This is the kind of circuit I’ve been designing in my Digital VLSI coursework.</p><p>Pick an input, then press <strong>Clock Pulse</strong> to store it. Try changing the input again. The old value stays in memory until the next pulse.</p></div>
+<div><h2>How a chip remembers</h2><p>Switches can work together to make a <strong>D flip-flop</strong>. It remembers one bit, a 0 or a 1. I’ve been designing one in my Digital VLSI class.</p><p>Pick 1. The stored value stays at 0 until you press <strong>Clock Pulse</strong>. Now pick 0 and see what happens.</p></div>
 <div class="demo"><div class="memory"><div><strong>Input</strong><div class="row" id="bits"><button aria-pressed="true">0</button><button aria-pressed="false">1</button></div></div><p><strong>Stored value</strong><output class="output" id="stored" aria-live="polite">0</output></p></div><button class="primary" id="pulse">Clock Pulse</button><p id="pulse-status" role="status"></p></div>
 </section>
-<footer><p class="closing">Something as simple as remembering a single 0 or 1 requires an extraordinary amount of microscopic engineering.</p><p>I made this exhibit to make the invisible world of electronics a little easier to imagine.</p><p class="sources"><a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_28nm">TSMC’s 28 nm technology</a> · <a href="https://www.nist.gov/system/files/documents/2017/05/09/doe_scale_of_things_chart.pdf">NIST’s scale chart</a></p></footer>
+<footer><p class="closing">Something as simple as remembering a single 0 or 1 requires an extraordinary amount of microscopic engineering.</p><p class="sources"><a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_28nm">TSMC’s 28 nm technology</a> · <a href="https://www.nist.gov/system/files/documents/2017/05/09/doe_scale_of_things_chart.pdf">NIST’s scale chart</a></p></footer>
 </main>
 <script>
 const select = selector => document.querySelector(selector);

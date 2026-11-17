@@ -65,7 +65,7 @@ window.ISABEL_ENTRIES[21] = {
 };
 
 window.ISABEL_ENTRIES[23] = {
-  title: "the invisible world",
+  title: "Understanding Microelectronics",
   work: "an interactive exhibit about the microscopic technology inside your phone",
   process: "i made a scale explorer and a one-bit memory demo to explain two things i’ve been learning in digital vlsi",
   inspiration: "science museum exhibits and my digital vlsi coursework",
@@ -73,7 +73,7 @@ window.ISABEL_ENTRIES[23] = {
 };
 
 window.ISABEL_ENTRIES[25] = {
-  title: "the art of engineering",
+  title: "Circuit Design as Art",
   work: "an interactive exhibit about the creative choices that go into laying out a chip",
   process: "i drew fictional layouts you can pull apart, compare, and watch turn into abstract art",
   inspiration: "my digital vlsi class and my professor’s idea that chip layout is an art form",

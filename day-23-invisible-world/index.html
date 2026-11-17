@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Invisible World</title>
+<title>Understanding Microelectronics</title>
 <style>
 :root{color:#242338;background:#f8f6ef;font:17px/1.6 "Instrument Sans",system-ui,sans-serif;--violet:#5742ad;--ink:#242338}
 *{box-sizing:border-box}body{margin:0}main{width:min(100% - 36px,1040px);margin:auto}header,section,footer{padding:clamp(2.8rem,8vw,6rem) 0;border-bottom:1px solid #d9d3e1}h1,h2,p,figure{margin:0}h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1;letter-spacing:-.055em}h1{font-size:clamp(3.5rem,11vw,9rem)}h2{font-size:clamp(2.45rem,6vw,5rem)}p{max-width:62ch;margin-top:1rem}small{display:block;margin-top:1rem;color:#e3ddff}a{color:var(--violet)}button{font:inherit;cursor:pointer;color:inherit;background:#fff;border:1px solid #b5a8d9;border-radius:100px;padding:.45rem .95rem}button:not(.wafer)[aria-pressed=true],button.primary{color:white;background:var(--violet);border-color:var(--violet)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ce4777;outline-offset:4px}nav{margin-top:1.5rem}nav a{display:inline-block;margin:0 1rem .5rem 0}.intro{color:var(--violet);font-size:clamp(1.15rem,3vw,1.5rem)}.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,5vw,4.5rem);align-items:center}.scene{height:360px;background:#e9e2fe;overflow:hidden;border-radius:1.5rem;display:grid;place-items:center}.phone{width:132px;height:239px;border:5px solid #353156;border-radius:24px;background:#39315f;position:relative;transform:scale(var(--zoom,1));transform-origin:50% 45%;will-change:transform}.board{position:absolute;inset:12% 10%;border-radius:9px;background:repeating-linear-gradient(90deg,#46866e 0 10px,#498b73 10px 12px)}.chip{position:absolute;top:45%;left:50%;translate:-50% -50%;width:32px;height:32px;background:#d5c5ff;border:4px solid #2e245d;box-shadow:0 0 0 3px #e9cf97}.chip:after{content:"";position:absolute;inset:3px;background:repeating-linear-gradient(45deg,#7b6ab5 0 1px,transparent 1px 3px)}.phone-scroll{min-height:76vh}.wafer-stage{background:#efe5fb;border-radius:1.5rem;min-height:305px;display:grid;place-items:center;position:relative;overflow:hidden}.wafer{width:220px;height:220px;max-width:90%;border-radius:50%;padding:0;background:repeating-linear-gradient(0deg,transparent 0 15px,#3a2e655f 15px 16px),repeating-linear-gradient(90deg,transparent 0 15px,#3a2e655f 15px 16px),conic-gradient(#ffd4b0,#a3b5ff,#88e2cc,#fdd1e9,#ffd4b0);transition:transform .4s}.wafer:hover,.wafer[aria-pressed=true]{color:var(--ink);background-color:#bca9f4;transform:scale(1.12)}.die{position:absolute;top:50%;left:50%;width:112px;height:112px;translate:-50% -50%;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 10px,#c1b4ef 10px 12px),repeating-linear-gradient(0deg,#56459a 0 15px,#dbb36e 15px 17px);border:5px solid #282040;box-shadow:0 8px 30px #30235366;opacity:0;transform:scale(.2);transition:transform .35s,opacity .25s}.wafer:hover+.die,.wafer:focus-visible+.die,.wafer[aria-pressed=true]+.die{transform:scale(1);opacity:1}figcaption{font-size:.88rem;margin-top:.65rem}.scope{background:#1b1731;color:#fbf8ff;border-radius:1.6rem;padding:clamp(1rem,4vw,2.5rem);margin-top:1.8rem}.scope canvas{display:block;width:100%;height:clamp(250px,48vw,440px);border:1px solid #6d608b;border-radius:.8rem;background:#221c3a}.scope label{display:block;margin:.8rem 0 .1rem}.scope input{width:100%;accent-color:#d3b9ff}.scope button{background:#33294f;border-color:#766598}.scope button[aria-pressed=true]{background:#e6d6ff;color:#241a3e}.row{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center}.scope .row{margin-top:.7rem}.demo{background:#eee7fb;border-radius:1.45rem;padding:clamp(1.1rem,4vw,2rem)}.output{font-size:3rem;font-variant-numeric:tabular-nums;line-height:1.2}.wire{height:68px;display:flex;align-items:center;margin-bottom:.6rem}.wire span{height:4px;flex:1;background:#736495}.wire b{height:4px;width:56px;background:#736495;transform:rotate(-25deg);transform-origin:left;transition:transform .3s}.wire.on b{transform:rotate(0)}.wire.on>*{background:#168069;box-shadow:0 0 10px #39ba86}.memory{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem}.memory p{margin:0}.memory strong{display:block}.closing{font-size:1.35rem}.sources{font-size:.85rem}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:700px){.split{grid-template-columns:1fr}.phone-scroll{min-height:0}.scene{height:290px}}@media(prefers-reduced-motion:reduce){*,*::after{transition:none!important}}
@@ -12,7 +12,7 @@
 #scale h2{max-width:12ch}.scale-hero{display:grid;grid-template-columns:1fr auto;align-items:end;gap:1.25rem}.scale-hero button{background:#f5c8ff;color:#241737;border:0;white-space:nowrap;font-weight:700}
 .scope{border:1px solid #8466a3;background:#150f28}.scope canvas{background:radial-gradient(ellipse at center,#3a2757,#19102b 76%);height:clamp(270px,50vw,470px)}
 #power{color:#ffc9ff;font-size:clamp(1.7rem,4vw,3.5rem);letter-spacing:-.06em;font-variant-numeric:tabular-nums;line-height:1;margin:0 0 .85rem}
-#comparison{color:#f1c1ff}.scale-fact{font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.2}
+#comparison:empty{display:none}#comparison{color:#f1c1ff}.scale-fact{font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.2}
 .wire.on span{background:repeating-linear-gradient(90deg,#168069 0 12px,#75ecc8 12px 21px,#168069 21px 34px);animation:flow .55s linear infinite}
 @keyframes flow{to{background-position:34px 0}}
 #stored{display:block;border-radius:.3rem;width:1.5em;text-align:center;background:#dcd0f7;color:#3a286b}.capture{animation:capture .65s ease-out}
@@ -23,16 +23,16 @@
 </head>
 <body><main>
 <header>
-<h1>The Invisible World</h1>
-<p class="intro">Have you ever wondered what's actually inside your phone?</p>
+<h1>Understanding Microelectronics</h1>
+<p class="intro">Exploring the microscopic scale of modern technology.</p>
 <nav aria-label="Exhibit shortcuts"><a href="#scale">Explore the nanoscale ↓</a><a href="#memory-demo">Try the one-bit memory ↓</a></nav>
 </header>
 <section class="split phone-scroll">
-<div><h2>Inside your phone</h2><p>Inside your phone is a chip, a tiny piece of silicon packed with tiny switches. Scroll to zoom in.</p><p>Fitting millions or even billions of parts onto a chip is called <strong>very large scale integration</strong>, or VLSI.</p></div>
+<div><h2>Inside your phone</h2><p>Inside your phone is a chip, a tiny piece of silicon packed with tiny switches.</p><p>Fitting millions or even billions of parts onto a chip is called <strong>very large scale integration</strong>, or VLSI.</p></div>
 <div class="scene" role="img" aria-label="Illustration of a phone with a chip on its circuit board"><div class="phone"><div class="board"></div><div class="chip"></div></div></div>
 </section>
 <section class="split">
-<div><h2>Who makes the chips?</h2><p>Chip designers draw the blueprints. Manufacturers like Taiwan Semiconductor Manufacturing Company (TSMC) build the chips on round slices of silicon called wafers.</p><p>TSMC calls one way of making chips “28 nm.” That’s the name of a technology generation. How small is 28 nm?</p></div>
+<div><h2>Who makes the chips?</h2><p>Chip designers draw the blueprints. Manufacturers like Taiwan Semiconductor Manufacturing Company (TSMC) build the chips on round slices of silicon called wafers.</p><p>TSMC calls one way of making chips “28 nm.” That’s the name of a technology generation. <strong>How small is 28 nm?</strong></p></div>
 <figure><div class="wafer-stage"><button class="wafer" type="button" aria-label="Magnify an illustrated chip on the wafer" aria-pressed="false"></button><div class="die" aria-hidden="true"></div></div><figcaption>Hover or tap to see one illustrated chip up close.</figcaption></figure>
 </section>
 <section id="scale">
@@ -48,7 +48,7 @@
 <input id="zoom" type="range" min="0" max="1000" value="0">
 <div class="row" id="stops" aria-label="Jump to a specimen"></div>
 <p id="specimen" aria-live="polite"></p><p id="comparison"></p>
-<small>Sizes are approximate. The 60 nm and 28 nm markers show example lengths. Real switches vary in size.</small>
+
 </div>
 <p class="scale-fact">About <strong>2,850</strong> lengths of 28 nm could fit across one hair.</p>
 </section>
@@ -60,7 +60,7 @@
 <div><h2>How a chip remembers</h2><p>Switches can work together to make a <strong>D flip-flop</strong>. It remembers one bit, a 0 or a 1. I’ve been designing one in my Digital VLSI class.</p><p>Pick 1. The stored value stays at 0 until you press <strong>Clock Pulse</strong>. Now pick 0 and see what happens.</p></div>
 <div class="demo"><div class="memory"><div><strong>Input</strong><div class="row" id="bits"><button aria-pressed="true">0</button><button aria-pressed="false">1</button></div></div><p><strong>Stored value</strong><output class="output" id="stored" aria-live="polite">0</output></p></div><button class="primary" id="pulse">Clock Pulse</button><p id="pulse-status" role="status"></p></div>
 </section>
-<footer><p class="closing">Something as simple as remembering a single 0 or 1 requires an extraordinary amount of microscopic engineering.</p><p><a href="../day-25-art-of-engineering/">Continue to The Art of Engineering →</a></p><p class="sources"><a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_28nm">TSMC’s 28 nm technology</a> · <a href="https://www.nist.gov/system/files/documents/2017/05/09/doe_scale_of_things_chart.pdf">NIST’s scale chart</a></p></footer>
+<footer><p class="closing">Something as simple as remembering a single 0 or 1 requires an extraordinary amount of microscopic engineering.</p><p><a href="../day-25-art-of-engineering/">Continue to Circuit Design as Art →</a></p><p class="sources"><a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_28nm">TSMC’s 28 nm technology</a> · <a href="https://www.nist.gov/system/files/documents/2017/05/09/doe_scale_of_things_chart.pdf">NIST’s scale chart</a></p></footer>
 </main>
 <script>
 const select = selector => document.querySelector(selector);
@@ -130,7 +130,7 @@ function render() {
     active = index;
     buttons.forEach((button,i) => button.setAttribute('aria-pressed',i===index));
     select('#specimen').textContent = item.name + ' · ' + item.description;
-    select('#comparison').textContent = index === 0 ? 'Start here. Every step uses the same ruler.' :
+    select('#comparison').textContent = index === 0 ? '' :
       'About ' + fmt(Math.round(specimens[0].size / item.size)) + ' of these lengths fit across the hair.';
   }
   select('#field').textContent = '· ' + fmt(field) + ' nm across';

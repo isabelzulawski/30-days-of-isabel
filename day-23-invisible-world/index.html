@@ -7,6 +7,18 @@
 <style>
 :root{color:#242338;background:#f8f6ef;font:17px/1.6 "Instrument Sans",system-ui,sans-serif;--violet:#5742ad;--ink:#242338}
 *{box-sizing:border-box}body{margin:0}main{width:min(100% - 36px,1040px);margin:auto}header,section,footer{padding:clamp(2.8rem,8vw,6rem) 0;border-bottom:1px solid #d9d3e1}h1,h2,p,figure{margin:0}h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1;letter-spacing:-.055em}h1{font-size:clamp(3.5rem,11vw,9rem)}h2{font-size:clamp(2.45rem,6vw,5rem)}p{max-width:62ch;margin-top:1rem}small{display:block;margin-top:1rem;color:#e3ddff}a{color:var(--violet)}button{font:inherit;cursor:pointer;color:inherit;background:#fff;border:1px solid #b5a8d9;border-radius:100px;padding:.45rem .95rem}button:not(.wafer)[aria-pressed=true],button.primary{color:white;background:var(--violet);border-color:var(--violet)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ce4777;outline-offset:4px}nav{margin-top:1.5rem}nav a{display:inline-block;margin:0 1rem .5rem 0}.intro{color:var(--violet);font-size:clamp(1.15rem,3vw,1.5rem)}.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,5vw,4.5rem);align-items:center}.scene{height:360px;background:#e9e2fe;overflow:hidden;border-radius:1.5rem;display:grid;place-items:center}.phone{width:132px;height:239px;border:5px solid #353156;border-radius:24px;background:#39315f;position:relative;transform:scale(var(--zoom,1));transform-origin:50% 45%;will-change:transform}.board{position:absolute;inset:12% 10%;border-radius:9px;background:repeating-linear-gradient(90deg,#46866e 0 10px,#498b73 10px 12px)}.chip{position:absolute;top:45%;left:50%;translate:-50% -50%;width:32px;height:32px;background:#d5c5ff;border:4px solid #2e245d;box-shadow:0 0 0 3px #e9cf97}.chip:after{content:"";position:absolute;inset:3px;background:repeating-linear-gradient(45deg,#7b6ab5 0 1px,transparent 1px 3px)}.phone-scroll{min-height:76vh}.wafer-stage{background:#efe5fb;border-radius:1.5rem;min-height:305px;display:grid;place-items:center;position:relative;overflow:hidden}.wafer{width:220px;height:220px;max-width:90%;border-radius:50%;padding:0;background:repeating-linear-gradient(0deg,transparent 0 15px,#3a2e655f 15px 16px),repeating-linear-gradient(90deg,transparent 0 15px,#3a2e655f 15px 16px),conic-gradient(#ffd4b0,#a3b5ff,#88e2cc,#fdd1e9,#ffd4b0);transition:transform .4s}.wafer:hover,.wafer[aria-pressed=true]{color:var(--ink);background-color:#bca9f4;transform:scale(1.12)}.die{position:absolute;top:50%;left:50%;width:112px;height:112px;translate:-50% -50%;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 10px,#c1b4ef 10px 12px),repeating-linear-gradient(0deg,#56459a 0 15px,#dbb36e 15px 17px);border:5px solid #282040;box-shadow:0 8px 30px #30235366;opacity:0;transform:scale(.2);transition:transform .35s,opacity .25s}.wafer:hover+.die,.wafer:focus-visible+.die,.wafer[aria-pressed=true]+.die{transform:scale(1);opacity:1}figcaption{font-size:.88rem;margin-top:.65rem}.scope{background:#1b1731;color:#fbf8ff;border-radius:1.6rem;padding:clamp(1rem,4vw,2.5rem);margin-top:1.8rem}.scope canvas{display:block;width:100%;height:clamp(250px,48vw,440px);border:1px solid #6d608b;border-radius:.8rem;background:#221c3a}.scope label{display:block;margin:.8rem 0 .1rem}.scope input{width:100%;accent-color:#d3b9ff}.scope button{background:#33294f;border-color:#766598}.scope button[aria-pressed=true]{background:#e6d6ff;color:#241a3e}.row{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center}.scope .row{margin-top:.7rem}.demo{background:#eee7fb;border-radius:1.45rem;padding:clamp(1.1rem,4vw,2rem)}.output{font-size:3rem;font-variant-numeric:tabular-nums;line-height:1.2}.wire{height:68px;display:flex;align-items:center;margin-bottom:.6rem}.wire span{height:4px;flex:1;background:#736495}.wire b{height:4px;width:56px;background:#736495;transform:rotate(-25deg);transform-origin:left;transition:transform .3s}.wire.on b{transform:rotate(0)}.wire.on>*{background:#168069;box-shadow:0 0 10px #39ba86}.memory{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem}.memory p{margin:0}.memory strong{display:block}.closing{font-size:1.35rem}.sources{font-size:.85rem}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:700px){.split{grid-template-columns:1fr}.phone-scroll{min-height:0}.scene{height:290px}}@media(prefers-reduced-motion:reduce){*,*::after{transition:none!important}}
+
+#scale{border:0;background:#201737;color:#f7eeff;margin-inline:calc(50% - 50vw);padding-inline:max(18px,calc((100vw - 1040px)/2));overflow:hidden}
+#scale h2{max-width:12ch}.scale-hero{display:grid;grid-template-columns:1fr auto;align-items:end;gap:1.25rem}.scale-hero button{background:#f5c8ff;color:#241737;border:0;white-space:nowrap;font-weight:700}
+.scope{border:1px solid #8466a3;background:#150f28}.scope canvas{background:radial-gradient(ellipse at center,#3a2757,#19102b 76%);height:clamp(270px,50vw,470px)}
+#power{color:#ffc9ff;font-size:clamp(1.7rem,4vw,3.5rem);letter-spacing:-.06em;font-variant-numeric:tabular-nums;line-height:1;margin:0 0 .85rem}
+#comparison{color:#f1c1ff}.scale-fact{font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.2}
+.wire.on span{background:repeating-linear-gradient(90deg,#168069 0 12px,#75ecc8 12px 21px,#168069 21px 34px);animation:flow .55s linear infinite}
+@keyframes flow{to{background-position:34px 0}}
+#stored{display:block;border-radius:.3rem;width:1.5em;text-align:center;background:#dcd0f7;color:#3a286b}.capture{animation:capture .65s ease-out}
+@keyframes capture{0%{background:#5742ad;color:white;transform:scale(1.2)}}
+@media(max-width:600px){.scale-hero{grid-template-columns:1fr;justify-items:start}}
+@media(prefers-reduced-motion:reduce){*,*::after{animation:none!important}}
 </style>
 </head>
 <body><main>
@@ -24,17 +36,21 @@
 <figure><div class="wafer-stage"><button class="wafer" type="button" aria-label="Magnify an illustrated chip on the wafer" aria-pressed="false"></button><div class="die" aria-hidden="true"></div></div><figcaption>Hover or tap to see one illustrated chip up close.</figcaption></figure>
 </section>
 <section id="scale">
-<h2>How small are we talking?</h2>
-<p>A nanometer (nm) is one billionth of a meter. Start with a hair and zoom in.</p>
+<div class="scale-hero">
+<div><h2>How small are we talking?</h2>
+<p>A nanometer (nm) is one billionth of a meter.</p></div>
+<button id="tour" type="button">Zoom from hair to 28 nm</button>
+</div>
 <div class="scope">
+<p id="power" aria-hidden="true">1× magnification</p>
 <canvas aria-label="Illustrated specimens scaled to the current field of view"></canvas>
 <label for="zoom">Zoom <output id="field" for="zoom"></output></label>
 <input id="zoom" type="range" min="0" max="1000" value="0">
 <div class="row" id="stops" aria-label="Jump to a specimen"></div>
-<p id="specimen" aria-live="polite"></p>
+<p id="specimen" aria-live="polite"></p><p id="comparison"></p>
 <small>Sizes are approximate. The 60 nm and 28 nm markers show example lengths. Real switches vary in size.</small>
 </div>
-<p>A hair is about <strong>1,300 times</strong> wider than the 60 nm marker.</p>
+<p class="scale-fact">About <strong>2,850</strong> lengths of 28 nm could fit across one hair.</p>
 </section>
 <section class="split">
 <div><h2>A switch inside a chip</h2><p>A <strong>transistor</strong> is a tiny part that controls electricity. In a chip, it can act like a switch. Try flipping one to see how two states can represent a 0 or a 1.</p></div>
@@ -80,11 +96,19 @@ const logRange = Math.log(maxField / minField);
 let position = 0;
 let frame;
 let active = -1;
+let touring = false;
+const tour = select('#tour');
+const positionFor = item => Math.min(1000, Math.round(1000 * Math.log(maxField / (item.size / .60)) / logRange));
+function stopTour() {
+  touring = false;
+  tour.textContent = 'Zoom from hair to 28 nm';
+  cancelAnimationFrame(frame);
+}
 const fmt = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(n);
 const buttons = specimens.map((item,index) => {
   const button = document.createElement('button');
   button.textContent = item.name;
-  button.onclick = () => zoomTo(Math.round(1000 * Math.log(maxField / (item.size / .60)) / logRange));
+  button.onclick = () => { stopTour(); zoomTo(positionFor(item)); };
   select('#stops').append(button);
   return button;
 });
@@ -106,14 +130,19 @@ function render() {
     active = index;
     buttons.forEach((button,i) => button.setAttribute('aria-pressed',i===index));
     select('#specimen').textContent = item.name + ' · ' + item.description;
+    select('#comparison').textContent = index === 0 ? 'Start here. Every step uses the same ruler.' :
+      'About ' + fmt(Math.round(specimens[0].size / item.size)) + ' of these lengths fit across the hair.';
   }
   select('#field').textContent = '· ' + fmt(field) + ' nm across';
+  select('#power').textContent = fmt(maxField / field) + '× magnification';
   slider.setAttribute('aria-valuetext',fmt(field)+' nanometers across');
   const size = item.size * pixelsPerNm;
   const x = w / 2, y = h * .44;
   ctx.fillStyle = item.color;
   ctx.strokeStyle = item.color;
   ctx.lineWidth = 2;
+  ctx.shadowColor = item.color;
+  ctx.shadowBlur = 20;
   if (index === 0) {
     ctx.fillRect(x-size/2,0,size,h*.80);
     ctx.strokeStyle='#9e654e';
@@ -147,6 +176,7 @@ function render() {
   } else {
     ruler(x-size/2,y,size,14);
   }
+  ctx.shadowBlur = 0;
   const desired = field*.22;
   const decade = 10**Math.floor(Math.log10(desired));
   const scale = [5,2,1].find(n => n*decade <= desired)*decade;
@@ -176,7 +206,32 @@ function zoomTo(target) {
   }
   frame=requestAnimationFrame(step);
 }
-slider.oninput=()=>{cancelAnimationFrame(frame);position=Number(slider.value);render();};
+slider.oninput=()=>{stopTour();position=Number(slider.value);render();};
+tour.onclick = () => {
+  if (touring) { stopTour(); return; }
+  if (reduce.matches) { zoomTo(1000); return; }
+  cancelAnimationFrame(frame);
+  touring = true;
+  tour.textContent = 'Stop zoom';
+  const stops = [0,...specimens.slice(1).map(positionFor)];
+  let stage = 0;
+  let started = performance.now();
+  function advance(now) {
+    const elapsed = now - started;
+    const t = Math.max(0, Math.min(1, (elapsed - 570) / 920));
+    const from = stops[stage], to = stops[stage+1];
+    position = from + (to-from) * (t*t*(3-2*t));
+    slider.value = Math.round(position);
+    render();
+    if (t === 1) {
+      stage++;
+      started = now;
+      if (stage === stops.length-1) { stopTour(); return; }
+    }
+    frame = requestAnimationFrame(advance);
+  }
+  frame = requestAnimationFrame(advance);
+};
 new ResizeObserver(render).observe(canvas);
 render();
 
@@ -195,7 +250,11 @@ document.querySelectorAll('#bits button').forEach(button => button.onclick=()=>{
   select('#pulse-status').textContent='';
 });
 select('#pulse').onclick=()=>{
-  select('#stored').textContent=input;
+  const stored = select('#stored');
+  stored.textContent=input;
+  stored.classList.remove('capture');
+  void stored.offsetWidth;
+  stored.classList.add('capture');
   select('#pulse-status').textContent='Clock pulse captured '+input+'.';
 };
 </script>

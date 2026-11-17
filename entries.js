@@ -63,3 +63,11 @@ window.ISABEL_ENTRIES[20] = {
 window.ISABEL_ENTRIES[21] = {
   title: "VLSI circuit design: consult isabel for more info"
 };
+
+window.ISABEL_ENTRIES[23] = {
+  title: "the invisible world",
+  work: "an interactive exhibit about the microscopic technology inside your phone",
+  process: "i made a scale explorer and a one-bit memory demo to explain two things i’ve been learning in digital vlsi",
+  inspiration: "science museum exhibits and my digital vlsi coursework",
+  link: "https://isabelzulawski.github.io/30-days-of-isabel/day-23-invisible-world/"
+};

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Invisible World</title>
+<style>
+:root{color:#242338;background:#f8f6ef;font:17px/1.6 "Instrument Sans",system-ui,sans-serif;--violet:#5742ad;--ink:#242338}
+*{box-sizing:border-box}body{margin:0}main{width:min(100% - 36px,1040px);margin:auto}header,section,footer{padding:clamp(2.8rem,8vw,6rem) 0;border-bottom:1px solid #d9d3e1}h1,h2,p,figure{margin:0}h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1;letter-spacing:-.055em}h1{font-size:clamp(3.5rem,11vw,9rem)}h2{font-size:clamp(2.45rem,6vw,5rem)}p{max-width:62ch;margin-top:1rem}small{display:block;margin-top:1rem;color:#e3ddff}a{color:var(--violet)}button{font:inherit;cursor:pointer;color:inherit;background:#fff;border:1px solid #b5a8d9;border-radius:100px;padding:.45rem .95rem}button:not(.wafer)[aria-pressed=true],button.primary{color:white;background:var(--violet);border-color:var(--violet)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ce4777;outline-offset:4px}nav{margin-top:1.5rem}nav a{display:inline-block;margin:0 1rem .5rem 0}.intro{color:var(--violet);font-size:clamp(1.15rem,3vw,1.5rem)}.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,5vw,4.5rem);align-items:center}.scene{height:360px;background:#e9e2fe;overflow:hidden;border-radius:1.5rem;display:grid;place-items:center}.phone{width:132px;height:239px;border:5px solid #353156;border-radius:24px;background:#39315f;position:relative;transform:scale(var(--zoom,1));transform-origin:50% 45%;will-change:transform}.board{position:absolute;inset:12% 10%;border-radius:9px;background:repeating-linear-gradient(90deg,#46866e 0 10px,#498b73 10px 12px)}.chip{position:absolute;top:45%;left:50%;translate:-50% -50%;width:32px;height:32px;background:#d5c5ff;border:4px solid #2e245d;box-shadow:0 0 0 3px #e9cf97}.chip:after{content:"";position:absolute;inset:3px;background:repeating-linear-gradient(45deg,#7b6ab5 0 1px,transparent 1px 3px)}.phone-scroll{min-height:76vh}.wafer-stage{background:#efe5fb;border-radius:1.5rem;min-height:305px;display:grid;place-items:center;position:relative;overflow:hidden}.wafer{width:220px;height:220px;max-width:90%;border-radius:50%;padding:0;background:repeating-linear-gradient(0deg,transparent 0 15px,#3a2e655f 15px 16px),repeating-linear-gradient(90deg,transparent 0 15px,#3a2e655f 15px 16px),conic-gradient(#ffd4b0,#a3b5ff,#88e2cc,#fdd1e9,#ffd4b0);transition:transform .4s}.wafer:hover,.wafer[aria-pressed=true]{color:var(--ink);background-color:#bca9f4;transform:scale(1.12)}.die{position:absolute;top:50%;left:50%;width:112px;height:112px;translate:-50% -50%;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 10px,#c1b4ef 10px 12px),repeating-linear-gradient(0deg,#56459a 0 15px,#dbb36e 15px 17px);border:5px solid #282040;box-shadow:0 8px 30px #30235366;opacity:0;transform:scale(.2);transition:transform .35s,opacity .25s}.wafer:hover+.die,.wafer:focus-visible+.die,.wafer[aria-pressed=true]+.die{transform:scale(1);opacity:1}figcaption{font-size:.88rem;margin-top:.65rem}.scope{background:#1b1731;color:#fbf8ff;border-radius:1.6rem;padding:clamp(1rem,4vw,2.5rem);margin-top:1.8rem}.scope canvas{display:block;width:100%;height:clamp(250px,48vw,440px);border:1px solid #6d608b;border-radius:.8rem;background:#221c3a}.scope label{display:block;margin:.8rem 0 .1rem}.scope input{width:100%;accent-color:#d3b9ff}.scope button{background:#33294f;border-color:#766598}.scope button[aria-pressed=true]{background:#e6d6ff;color:#241a3e}.row{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center}.scope .row{margin-top:.7rem}.demo{background:#eee7fb;border-radius:1.45rem;padding:clamp(1.1rem,4vw,2rem)}.output{font-size:3rem;font-variant-numeric:tabular-nums;line-height:1.2}.wire{height:68px;display:flex;align-items:center;margin-bottom:.6rem}.wire span{height:4px;flex:1;background:#736495}.wire b{height:4px;width:56px;background:#736495;transform:rotate(-25deg);transform-origin:left;transition:transform .3s}.wire.on b{transform:rotate(0)}.wire.on>*{background:#168069;box-shadow:0 0 10px #39ba86}.memory{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem}.memory p{margin:0}.memory strong{display:block}.closing{font-size:1.35rem}.sources{font-size:.85rem}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:700px){.split{grid-template-columns:1fr}.phone-scroll{min-height:0}.scene{height:290px}}@media(prefers-reduced-motion:reduce){*,*::after{transition:none!important}}
+</style>
+</head>
+<body><main>
+<header>
+<h1>The Invisible World</h1>
+<p class="intro">Have you ever wondered what's actually inside your phone?</p>
+<nav aria-label="Exhibit shortcuts"><a href="#scale">Explore the nanoscale ↓</a><a href="#memory-demo">Try the one-bit memory ↓</a></nav>
+</header>
+<section class="split phone-scroll">
+<div><h2>Inside your phone</h2><p>A computer chip is a tiny piece of silicon packed with microscopic electronic components. Scroll to get closer to one.</p><p><strong>Very Large Scale Integration (VLSI)</strong> is how engineers design chips that fit thousands, millions, or even billions of components onto one piece of silicon.</p></div>
+<div class="scene" role="img" aria-label="Illustration of a phone with a chip on its circuit board"><div class="phone"><div class="board"></div><div class="chip"></div></div></div>
+</section>
+<section class="split">
+<div><h2>Meet TSMC</h2><p>Taiwan Semiconductor Manufacturing Company is a leading chip manufacturer based in Taiwan. Chip designers are like architects who draw blueprints. A manufacturer like TSMC is the builder that turns them into physical chips.</p><p>Engineers can design for TSMC’s 28 nm manufacturing technology. “28 nm” names a generation of technology. Individual parts of the chip can have different dimensions.</p></div>
+<figure><div class="wafer-stage"><button class="wafer" type="button" aria-label="Magnify an illustrated chip on the wafer" aria-pressed="false"></button><div class="die" aria-hidden="true"></div></div><figcaption>Hover or tap to magnify a fictional chip on this illustrated silicon wafer.</figcaption></figure>
+</section>
+<section id="scale">
+<h2>How small are we talking?</h2>
+<p>A nanometer is one billionth of a meter. Move the zoom slider to compare the width of a hair with lengths measured in tens of nanometers.</p>
+<div class="scope">
+<canvas aria-label="Illustrated specimens scaled to the current field of view"></canvas>
+<label for="zoom">Zoom <output id="field" for="zoom"></output></label>
+<input id="zoom" type="range" min="0" max="1000" value="0">
+<div class="row" id="stops" aria-label="Jump to a specimen"></div>
+<p id="specimen" aria-live="polite"></p>
+<small>Biological sizes vary. The bacterium is drawn at 1,500 nm within an illustrative 1,000–2,000 nm range. The 60 nm and 28 nm markers show lengths for comparison. Transistors and manufacturing nodes don’t have a single universal dimension.</small>
+</div>
+<p>At these example sizes, a hair is more than <strong>1,300 times</strong> as wide as the 60 nm feature.</p>
+</section>
+<section class="split">
+<div><h2>The world’s tiniest switches</h2><p>A transistor controls the flow of electricity. Think of it as a microscopic switch. Digital computers represent information with 0s and 1s. Many tiny switches working together make complicated computations possible.</p></div>
+<div class="demo"><div class="wire" aria-hidden="true"><span></span><b></b><span></span></div><p>Output <output class="output" id="switch-value" aria-live="polite">0</output></p><button id="switch" aria-pressed="false">Close switch</button><p>Simplified model. Open represents 0 and closed represents 1.</p></div>
+</section>
+<section class="split" id="memory-demo">
+<div><h2>A memory that remembers one thing</h2><p>A D flip-flop remembers one bit, either 0 or 1. It’s like a tiny notebook that holds one yes-or-no answer. This is the kind of circuit I’ve been designing in my Digital VLSI coursework.</p><p>Pick an input, then press <strong>Clock Pulse</strong> to store it. Try changing the input again. The old value stays in memory until the next pulse.</p></div>
+<div class="demo"><div class="memory"><div><strong>Input</strong><div class="row" id="bits"><button aria-pressed="true">0</button><button aria-pressed="false">1</button></div></div><p><strong>Stored value</strong><output class="output" id="stored" aria-live="polite">0</output></p></div><button class="primary" id="pulse">Clock Pulse</button><p id="pulse-status" role="status"></p></div>
+</section>
+<footer><p class="closing">Something as simple as remembering a single 0 or 1 requires an extraordinary amount of microscopic engineering.</p><p>I made this exhibit to make the invisible world of electronics a little easier to imagine.</p><p class="sources"><a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_28nm">TSMC’s 28 nm technology</a> · <a href="https://www.nist.gov/system/files/documents/2017/05/09/doe_scale_of_things_chart.pdf">NIST’s scale chart</a></p></footer>
+</main>
+<script>
+const select = selector => document.querySelector(selector);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+const phone = select('.phone');
+function scrollPhone() {
+  const scene = select('.scene').getBoundingClientRect();
+  const progress = Math.max(0, Math.min(1, (.78 * innerHeight - scene.top) / (innerHeight * .57)));
+  phone.style.setProperty('--zoom', reduce.matches ? 1 : 1 + progress ** 2 * 6);
+}
+addEventListener('scroll', scrollPhone, {passive:true});
+addEventListener('resize', scrollPhone);
+reduce.addEventListener('change', scrollPhone);
+scrollPhone();
+select('.wafer').onclick = event => {
+  const button = event.currentTarget;
+  button.setAttribute('aria-pressed', button.getAttribute('aria-pressed') !== 'true');
+};
+
+const specimens = [
+  {name:'Human hair',size:80000,color:'#e7bc8d',description:'≈ 80,000 nm wide'},
+  {name:'Red blood cell',size:8000,color:'#ff7e94',description:'≈ 8,000 nm across'},
+  {name:'Bacterium',size:1500,color:'#a3e3b4',description:'≈ 1,000–2,000 nm long'},
+  {name:'60 nm feature',size:60,color:'#d6b7ff',description:'60 nm in this illustration'},
+  {name:'28 nm marker',size:28,color:'#a0cbff',description:'28 nm between the end ticks'}
+];
+const canvas = select('canvas');
+const ctx = canvas.getContext('2d');
+const slider = select('#zoom');
+const minField = 47;
+const maxField = 135000;
+const logRange = Math.log(maxField / minField);
+let position = 0;
+let frame;
+let active = -1;
+const fmt = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(n);
+const buttons = specimens.map((item,index) => {
+  const button = document.createElement('button');
+  button.textContent = item.name;
+  button.onclick = () => zoomTo(Math.round(1000 * Math.log(maxField / (item.size / .60)) / logRange));
+  select('#stops').append(button);
+  return button;
+});
+function render() {
+  const field = maxField * Math.exp(-logRange * position / 1000);
+  const {width:w,height:h} = canvas.getBoundingClientRect();
+  const ratio = Math.min(devicePixelRatio,2);
+  if (canvas.width !== Math.round(w*ratio) || canvas.height !== Math.round(h*ratio)) {
+    canvas.width = Math.round(w*ratio);
+    canvas.height = Math.round(h*ratio);
+  }
+  ctx.setTransform(ratio,0,0,ratio,0,0);
+  ctx.clearRect(0,0,w,h);
+  const pixelsPerNm = w / field;
+  const index = specimens.reduce((best,item,i) =>
+    Math.abs(Math.log(item.size / (field*.60))) < Math.abs(Math.log(specimens[best].size / (field*.60))) ? i : best,0);
+  const item = specimens[index];
+  if (index !== active) {
+    active = index;
+    buttons.forEach((button,i) => button.setAttribute('aria-pressed',i===index));
+    select('#specimen').textContent = item.name + ' · ' + item.description;
+  }
+  select('#field').textContent = '· ' + fmt(field) + ' nm across';
+  slider.setAttribute('aria-valuetext',fmt(field)+' nanometers across');
+  const size = item.size * pixelsPerNm;
+  const x = w / 2, y = h * .44;
+  ctx.fillStyle = item.color;
+  ctx.strokeStyle = item.color;
+  ctx.lineWidth = 2;
+  if (index === 0) {
+    ctx.fillRect(x-size/2,0,size,h*.80);
+    ctx.strokeStyle='#9e654e';
+    for (let i=0;i<8;i++) {
+      ctx.beginPath();
+      ctx.moveTo(x-size/2,i*h*.105);
+      ctx.quadraticCurveTo(x,i*h*.105+16,x+size/2,i*h*.105);
+      ctx.stroke();
+    }
+  } else if (index === 1) {
+    const gradient = ctx.createRadialGradient(x,y,0,x,y,size/2);
+    gradient.addColorStop(0,'#912447');
+    gradient.addColorStop(.65,'#ff9cac');
+    gradient.addColorStop(1,'#c94265');
+    ctx.fillStyle=gradient;
+    ctx.beginPath();
+    ctx.arc(x,y,size/2,0,2*Math.PI);
+    ctx.fill();
+  } else if (index === 2) {
+    ctx.beginPath();
+    ctx.roundRect(x-size/2,y-size*.17,size,size*.34,size*.17);
+    ctx.fill();
+    ctx.fillStyle='#418564';
+    for(let i=0;i<9;i++) {
+      ctx.beginPath();
+      ctx.arc(x+size*(i/11-.36),y+Math.sin(i*2)*size*.09,size*.014,0,2*Math.PI);
+      ctx.fill();
+    }
+  } else if (index === 3) {
+    ctx.fillRect(x-size/2,y-size*.21,size,size*.42);
+  } else {
+    ruler(x-size/2,y,size,14);
+  }
+  const desired = field*.22;
+  const decade = 10**Math.floor(Math.log10(desired));
+  const scale = [5,2,1].find(n => n*decade <= desired)*decade;
+  ctx.strokeStyle='#e6d6ff';
+  ctx.fillStyle='#e6d6ff';
+  ctx.font='13px monospace';
+  ruler(17,h-32,scale*pixelsPerNm,5);
+  ctx.fillText(fmt(scale)+' nm',17,h-12);
+}
+function ruler(x,y,width,tick) {
+  ctx.beginPath();
+  ctx.moveTo(x,y-tick);ctx.lineTo(x,y+tick);
+  ctx.moveTo(x,y);ctx.lineTo(x+width,y);
+  ctx.moveTo(x+width,y-tick);ctx.lineTo(x+width,y+tick);
+  ctx.stroke();
+}
+function zoomTo(target) {
+  cancelAnimationFrame(frame);
+  slider.value=target;
+  const start=position;
+  const time=performance.now();
+  function step(now) {
+    const t=reduce.matches?1:Math.min(1,(now-time)/520);
+    position=start+(target-start)*(1-(1-t)**3);
+    render();
+    if(t<1) frame=requestAnimationFrame(step);
+  }
+  frame=requestAnimationFrame(step);
+}
+slider.oninput=()=>{cancelAnimationFrame(frame);position=Number(slider.value);render();};
+new ResizeObserver(render).observe(canvas);
+render();
+
+select('#switch').onclick = event => {
+  const button=event.currentTarget;
+  const closed=button.getAttribute('aria-pressed')!=='true';
+  button.setAttribute('aria-pressed',closed);
+  button.textContent=closed?'Open switch':'Close switch';
+  select('.wire').classList.toggle('on',closed);
+  select('#switch-value').textContent=closed?'1':'0';
+};
+let input='0';
+document.querySelectorAll('#bits button').forEach(button => button.onclick=()=>{
+  input=button.textContent;
+  document.querySelectorAll('#bits button').forEach(choice=>choice.setAttribute('aria-pressed',choice===button));
+  select('#pulse-status').textContent='';
+});
+select('#pulse').onclick=()=>{
+  select('#stored').textContent=input;
+  select('#pulse-status').textContent='Clock pulse captured '+input+'.';
+};
+</script>
+</body></html>

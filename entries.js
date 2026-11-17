@@ -59,3 +59,7 @@ window.ISABEL_ENTRIES[20] = {
   refine: false,
   imagePath: "entries/day-20-madmapper.png"
 };
+
+window.ISABEL_ENTRIES[21] = {
+  title: "VLSI circuit design: consult isabel for more info"
+};

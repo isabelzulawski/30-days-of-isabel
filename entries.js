@@ -71,3 +71,11 @@ window.ISABEL_ENTRIES[23] = {
   inspiration: "science museum exhibits and my digital vlsi coursework",
   link: "https://isabelzulawski.github.io/30-days-of-isabel/day-23-invisible-world/"
 };
+
+window.ISABEL_ENTRIES[25] = {
+  title: "the art of engineering",
+  work: "an interactive exhibit about the creative choices that go into laying out a chip",
+  process: "i drew fictional layouts you can pull apart, compare, and watch turn into abstract art",
+  inspiration: "my digital vlsi class and my professor’s idea that chip layout is an art form",
+  link: "https://isabelzulawski.github.io/30-days-of-isabel/day-25-art-of-engineering/"
+};

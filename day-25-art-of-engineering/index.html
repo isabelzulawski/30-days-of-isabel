@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Art of Engineering</title>
+<meta name="description" content="An interactive exhibition about the visual choices inside a chip.">
+<style>
+:root{color:#2a2337;background:#f8f6ef;font:17px/1.6 "Instrument Sans",system-ui,sans-serif;--purple:#563787;--border:#d9cfdf}
+*{box-sizing:border-box}body{margin:0}main{width:min(100% - 36px,1080px);margin:auto}
+header,section,footer{padding:clamp(3rem,8vw,6.5rem) 0;border-bottom:1px solid var(--border)}
+h1,h2,p,figure,blockquote{margin:0}h1,h2,blockquote{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.03;letter-spacing:-.047em}
+h1{font-size:clamp(3.9rem,10vw,9rem)}h2{font-size:clamp(2.5rem,6vw,5.7rem)}p{margin-top:1rem;max-width:55ch}
+a{color:var(--purple);text-underline-offset:.22em}button,input{font:inherit;accent-color:#6539aa}button{cursor:pointer;border:1px solid var(--border);background:#fff8;color:inherit;border-radius:99px;padding:.52em .9em}button[aria-pressed=true]{background:#e8dcf8;border-color:#9371bb}button[aria-pressed=false]{text-decoration:line-through}
+:focus-visible{outline:3px solid #ac376b;outline-offset:4px}
+.question{color:var(--purple);font-size:clamp(1.2rem,3vw,1.65rem);margin-bottom:1.6rem}
+.artboard{display:block;width:100%;height:auto;border-radius:1rem;background:#211733}
+.hero-board{margin-top:2rem;box-shadow:0 1.5rem 3rem #3a235321}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,5vw,5rem);align-items:center}.panel{background:#eee6f4;padding:clamp(1.1rem,4vw,2rem);border-radius:1.4rem}
+figcaption{font-size:.9rem;margin-top:.75rem}.controls{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.swatch{display:inline-block;width:.75em;height:.75em;border-radius:50%;margin-right:.3em;background:var(--swatch)}
+.reflection{background:#eadcf5;margin-inline:calc(50% - 50vw);padding-inline:max(18px,calc((100vw - 1080px)/2))}.reflection blockquote{max-width:28ch;font-size:clamp(2rem,5vw,4rem);margin:1.6rem 0 2rem}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}.principles p{border-top:1px solid #9b80b3;padding-top:.65rem;margin:0}.principles strong{display:block}
+.comparison{margin-top:1.5rem}.comparisons{display:flex;justify-content:space-between;gap:1em;margin-top:.8rem}.comparison input{width:100%;display:block;margin:.7em 0}.note{font-size:.93rem;color:#5a456b}
+.transform{padding-bottom:1rem}.scroll-art{height:145vh;padding-top:1.5rem}.sticky{position:sticky;top:9vh}.sticky canvas{max-height:70vh;object-fit:contain;background:#211733}.sticky p{padding-bottom:.7em;margin-top:.65em}
+.nda{min-height:clamp(185px,35vw,335px);display:grid;place-items:center;background:#101015;color:#fff;border-radius:1rem;font:clamp(.75rem,2.4vw,1.15rem)/1.2 "IBM Plex Mono",monospace;padding:1rem;text-align:center}
+.closing{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(2.2rem,6vw,4.8rem);line-height:1.05;max-width:20ch}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:710px){.split{grid-template-columns:1fr}.principles{grid-template-columns:repeat(2,1fr)}.scroll-art{height:110vh}.sticky{top:18vh}}
+@media(prefers-reduced-motion:reduce){.scroll-art{height:auto}.sticky{position:static}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="question">Can something designed purely to function also be a work of art?</p>
+<h1>The Art of Engineering</h1>
+<canvas id="hero" class="artboard hero-board" width="900" height="480" role="img" aria-label="Colorful geometric artwork made of nested rectangles and intersecting paths"></canvas>
+</header>
+<section class="split">
+<h2>Look again.</h2>
+<div><p>That composition borrows its shapes from a chip layout. Inside a chip, where the tiny parts go matters just as much as how they connect.</p><p>In my Digital VLSI class, I used <strong>Cadence Virtuoso</strong> to design and test a flip-flop, a circuit that stores one 0 or 1. I had to figure out how it should work, then decide where its parts and connections would go.</p><p>Each arrangement asks for a tradeoff between speed, power, space, and reliability.</p></div>
+</section>
+<section class="split">
+<div><h2>A city in layers</h2><p>A layout is a blueprint for where everything goes. Think of the parts as buildings and the connections as roads. Roads on different levels can cross without meeting. Engineers plan those routes within the limits of what can be manufactured.</p></div>
+<figure class="panel">
+<canvas id="layers" class="artboard" width="900" height="480" role="img" aria-label="Fictional chip layout with switchable parts and two layers of connections"></canvas>
+<div class="controls" aria-label="Layout layers">
+<button type="button" data-layer="parts" aria-pressed="true"><span class="swatch" style="--swatch:#efab78"></span>Parts</button>
+<button type="button" data-layer="lower" aria-pressed="true"><span class="swatch" style="--swatch:#b9a2ff"></span>Lower roads</button>
+<button type="button" data-layer="upper" aria-pressed="true"><span class="swatch" style="--swatch:#7ed4b5"></span>Upper roads</button>
+</div>
+<figcaption>Tap a layer to see what it adds to the layout.</figcaption>
+</figure>
+</section>
+<section class="reflection">
+<h2>My professor says this is art.</h2>
+<blockquote>“My professor always tells us that layout is an art form. What's fascinating to me is that the same things we value in art, like symmetry, balance, and organization, can also make a circuit perform better. We're designing something so small that nobody will ever see it with their own eyes, but its physical arrangement still matters enormously.”</blockquote>
+<div class="principles">
+<p><strong>Symmetry</strong> Matching placements can help parts behave alike.</p>
+<p><strong>Balance</strong> Similar paths can reduce electrical differences.</p>
+<p><strong>Organization</strong> Nearby parts can use shorter connections.</p>
+<p><strong>Composition</strong> Every shape changes how the whole fits together.</p>
+</div>
+<p>A beautiful layout still needs electrical testing to see how well it works.</p>
+</section>
+<section>
+<h2>Can you make it better?</h2>
+<p>Drag the slider to reveal a second arrangement. Follow the long paths on the left and see how they change on the right.</p>
+<figure class="comparison">
+<canvas id="comparison" class="artboard" width="900" height="480" role="img" aria-label="Comparison of a meandering layout on the left and a compact, balanced layout on the right"></canvas>
+<div class="comparisons" aria-hidden="true"><span>Long routes</span><span>Short routes</span></div>
+<label class="sr" for="reveal">How much of the shorter route layout to reveal</label>
+<input id="reveal" type="range" min="0" max="100" value="50">
+<figcaption class="note">Putting related parts closer together can shorten their routes. The organized version also places matching parts in pairs.</figcaption>
+</figure>
+</section>
+<section id="transformation" class="transform">
+<h2>From layout to artwork</h2>
+<p>Scroll to watch the labels fade and the colors shift. Every shape stays in the same place.</p>
+<div class="scroll-art"><div class="sticky"><canvas id="art" class="artboard" width="900" height="480" role="img" aria-label="The organized layout transitions into abstract art in the same positions"></canvas></div></div>
+</section>
+<section class="split">
+<div><h2>The part I can’t show you</h2><p>My real Cadence design uses technology covered by a non-disclosure agreement with TSMC. I drew the fictional layouts on this page for the exhibit.</p></div>
+<div class="nda">Actual Design — NDA Protected</div>
+</section>
+<footer>
+<p>Taking an art class made me notice how familiar this part of engineering feels. I move shapes around, try a different arrangement, and see what the change makes possible.</p>
+<p class="closing">Maybe engineering and art aren't as different as they seem.</p>
+<p><a href="../day-23-invisible-world/">← Explore The Invisible World</a></p>
+</footer>
+</main>
+<script>
+const organized = {
+  parts: [[140,128],[365,128],[590,128],[140,298],[365,298],[590,298]],
+  lower: [[[95,164],[805,164]],[[95,334],[805,334]],[[212,88],[212,392]],[[437,88],[437,392]],[[662,88],[662,392]]],
+  upper: [[[95,250],[310,250],[310,202],[565,202],[565,250],[805,250]],[[288,110],[288,388]],[[512,110],[512,388]],[[737,110],[737,388]]]
+};
+const cluttered = {
+  parts: [[120,90],[600,95],[354,190],[660,300],[240,312],[110,230]],
+  lower: [[[95,126],[247,126],[247,62],[805,62],[805,337],[699,337]],
+    [[95,264],[270,264],[270,225],[449,225],[449,129],[681,129]],
+    [[312,348],[312,412],[777,412],[777,254],[527,254],[527,225]]],
+  upper: [[[158,85],[158,51],[833,51],[833,384],[675,384],[675,337]],
+    [[149,266],[149,369],[542,369],[542,209],[633,209],[633,132]],
+    [[392,225],[392,279],[285,279],[285,338]]]
+};
+const technical = ['211733','372a50','efab78','b9a2ff','7ed4b5','f5eaff'];
+const artistic = ['23133d','3a1e55','ff819d','f5ce68','8fa9ff','ffc99b'];
+const colors = (a,b,m) => '#' + [0,2,4].map(i=>{
+  const start=parseInt(a.slice(i,i+2),16),end=parseInt(b.slice(i,i+2),16);
+  return Math.round(start+(end-start)*m).toString(16).padStart(2,'0');
+}).join('');
+const visible = {parts:true,lower:true,upper:true};
+const get = id => document.getElementById(id);
+function draw(ctx,layout,mix,enabled=visible,labels=false) {
+  const [bg,grid,parts,lower,upper,detail] = technical.map((color,i)=>colors(color,artistic[i],mix));
+  ctx.fillStyle=bg;
+  ctx.fillRect(0,0,900,480);
+  ctx.strokeStyle=grid;
+  ctx.lineWidth=1;
+  ctx.beginPath();
+  for (let x=18;x<900;x+=24) {ctx.moveTo(x,0);ctx.lineTo(x,480)}
+  for (let y=18;y<480;y+=24) {ctx.moveTo(0,y);ctx.lineTo(900,y)}
+  ctx.stroke();
+  for(const [key,color] of [['lower',lower],['upper',upper]]) {
+    if(!enabled[key]) continue;
+    ctx.strokeStyle=color;
+    ctx.fillStyle=color;
+    ctx.lineWidth=key==='lower'?20:11;
+    ctx.lineCap='square';
+    for(const route of layout[key]) {
+      ctx.beginPath();
+      route.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));
+      ctx.stroke();
+      for(const [x,y] of [route[0],route.at(-1)]) ctx.fillRect(x-12,y-12,24,24);
+    }
+  }
+  if(enabled.parts) for(const [x,y] of layout.parts) {
+    ctx.fillStyle=parts;
+    ctx.fillRect(x,y,118,72);
+    ctx.fillStyle=bg;
+    ctx.fillRect(x+12,y+12,94,48);
+    ctx.fillStyle=detail;
+    for(let i=0;i<5;i++) ctx.fillRect(x+18+i*18,y+19,8,34);
+  }
+  if(labels) {
+    ctx.save();
+    ctx.globalAlpha=1-mix;
+    ctx.font='19px monospace';
+    ctx.fillStyle=detail;
+    ctx.fillText('CONNECTIONS',95,48);
+    ctx.fillText('COMPONENTS',590,438);
+    ctx.restore();
+  }
+}
+const hero=get('hero').getContext('2d');
+draw(hero,organized,1);
+const layers=get('layers').getContext('2d');
+draw(layers,organized,0);
+document.querySelectorAll('[data-layer]').forEach(button=>button.onclick=()=>{
+  const layer=button.dataset.layer;
+  visible[layer]=!visible[layer];
+  button.setAttribute('aria-pressed',visible[layer]);
+  draw(layers,organized,0);
+});
+const allLayers={parts:true,lower:true,upper:true};
+const reveal=get('reveal');
+const comparison=get('comparison').getContext('2d');
+function renderComparison() {
+  const x=900*(1-Number(reveal.value)/100);
+  draw(comparison,cluttered,0,allLayers);
+  comparison.save();
+  comparison.beginPath();
+  comparison.rect(x,0,900-x,480);
+  comparison.clip();
+  draw(comparison,organized,0,allLayers);
+  comparison.restore();
+  if(x>0&&x<900) {
+    comparison.fillStyle='#fff4fc';
+    comparison.fillRect(x-2,0,4,480);
+  }
+}
+reveal.oninput=renderComparison;
+renderComparison();
+const art=get('art').getContext('2d');
+const scrollArea=document.querySelector('.scroll-art');
+const motion=matchMedia('(prefers-reduced-motion: reduce)');
+let frame;
+function renderArt() {
+  const box=scrollArea.getBoundingClientRect();
+  const progress=Math.max(0,Math.min(1,(innerHeight*.15-box.top)/(box.height-innerHeight*.52)));
+  draw(art,organized,motion.matches?1:progress,allLayers,true);
+}
+function scheduleArt() {
+  cancelAnimationFrame(frame);
+  frame=requestAnimationFrame(renderArt);
+}
+addEventListener('scroll',scheduleArt,{passive:true});
+addEventListener('resize',scheduleArt);
+motion.addEventListener('change',scheduleArt);
+renderArt();
+</script>
+</body></html>
